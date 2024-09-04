@@ -23,7 +23,8 @@ import CopyIcon from "../icons/copy.svg";
 import LoadingIcon from "../icons/three-dots.svg";
 import ChatGptIcon from "../icons/chatgpt.png";
 import ShareIcon from "../icons/share.svg";
-import BotIcon from "../icons/bot.png";
+
+import Chemonics from "../icons/chem-bot.png";
 
 import DownloadIcon from "../icons/download.svg";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -409,7 +410,7 @@ function ExportAvatar(props: { avatar: string }) {
   if (props.avatar === DEFAULT_MASK_AVATAR) {
     return (
       <img
-        src={BotIcon.src}
+        src={Chemonics.src}
         width={30}
         height={30}
         alt="bot"
@@ -539,9 +540,9 @@ export function ImagePreviewer(props: {
           </div>
 
           <div>
-            <div className={styles["main-title"]}>NextChat</div>
+            <div className={styles["main-title"]}>ChemChat</div>
             <div className={styles["sub-title"]}>
-              github.com/ChatGPTNextWeb/ChatGPT-Next-Web
+              Your Chemonics AI Companion
             </div>
             <div className={styles["icons"]}>
               <ExportAvatar avatar={config.avatar} />

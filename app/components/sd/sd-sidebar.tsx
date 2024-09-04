@@ -120,7 +120,7 @@ export function SideBar(props: { className?: string }) {
       <SideBarBody>
         <SdPanel />
       </SideBarBody>
-      <SideBarTail
+      {/* <SideBarTail
         primaryAction={
           <a href={REPO_URL} target="_blank" rel="noopener noreferrer">
             <IconButton icon={<GithubIcon />} shadow />
@@ -134,7 +134,7 @@ export function SideBar(props: { className?: string }) {
             onClick={handleSubmit}
           ></IconButton>
         }
-      />
+      /> */}
     </SideBarContainer>
   );
 }

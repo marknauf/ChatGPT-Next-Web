@@ -12,6 +12,7 @@ import DeleteIcon from "../icons/delete.svg";
 import MaskIcon from "../icons/mask.svg";
 import DragIcon from "../icons/drag.svg";
 import DiscoveryIcon from "../icons/discovery.svg";
+import Chemonics from "../icons/chemonics.svg";
 
 import Locale from "../locales";
 
@@ -225,11 +226,11 @@ export function SideBar(props: { className?: string }) {
       {...props}
     >
       <SideBarHeader
-        title="NextChat"
-        subTitle="Build your own AI assistant."
-        logo={<ChatGptIcon />}
+        title="ChemChat"
+        subTitle="Your Chemonics Companion."
+        logo={<Chemonics />}
       >
-        <div className={styles["sidebar-header-bar"]}>
+        {/* <div className={styles["sidebar-header-bar"]}>
           <IconButton
             icon={<MaskIcon />}
             text={shouldNarrow ? undefined : Locale.Mask.Name}
@@ -250,7 +251,7 @@ export function SideBar(props: { className?: string }) {
             onClick={() => setShowPluginSelector(true)}
             shadow
           />
-        </div>
+        </div> */}
         {showPluginSelector && (
           <Selector
             items={[
@@ -304,7 +305,7 @@ export function SideBar(props: { className?: string }) {
                 />
               </Link>
             </div>
-            <div className={styles["sidebar-action"]}>
+            {/* <div className={styles["sidebar-action"]}>
               <a href={REPO_URL} target="_blank" rel="noopener noreferrer">
                 <IconButton
                   aria={Locale.Export.MessageFromChatGPT}
@@ -312,7 +313,7 @@ export function SideBar(props: { className?: string }) {
                   shadow
                 />
               </a>
-            </div>
+            </div> */}
           </>
         }
         secondaryAction={
