@@ -4,14 +4,9 @@ import styles from "./home.module.scss";
 
 import { IconButton } from "./button";
 import SettingsIcon from "../icons/settings.svg";
-import GithubIcon from "../icons/github.svg";
-import ChatGptIcon from "../icons/chatgpt.svg";
 import AddIcon from "../icons/add.svg";
-import CloseIcon from "../icons/close.svg";
 import DeleteIcon from "../icons/delete.svg";
-import MaskIcon from "../icons/mask.svg";
 import DragIcon from "../icons/drag.svg";
-import DiscoveryIcon from "../icons/discovery.svg";
 import Chemonics from "../icons/chemonics.svg";
 
 import Locale from "../locales";
@@ -34,6 +29,10 @@ import dynamic from "next/dynamic";
 import { showConfirm, Selector } from "./ui-lib";
 
 const ChatList = dynamic(async () => (await import("./chat-list")).ChatList, {
+  loading: () => null,
+});
+
+const MenuList = dynamic(async () => (await import("./menu-list")).MenuList, {
   loading: () => null,
 });
 
@@ -197,6 +196,18 @@ export function SideBarBody(props: {
   );
 }
 
+export function SideBarMenu(props: {
+  children: React.ReactNode;
+  onClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+}) {
+  const { onClick, children } = props;
+  return (
+    <div className={styles["sidebar-menu"]} onClick={onClick}>
+      {children}
+    </div>
+  );
+}
+
 export function SideBarTail(props: {
   primaryAction?: React.ReactNode;
   secondaryAction?: React.ReactNode;
@@ -274,6 +285,16 @@ export function SideBar(props: { className?: string }) {
           />
         )}
       </SideBarHeader>
+      <SideBarMenu
+        onClick={(e) => {
+          if (e.target === e.currentTarget) {
+            navigate(Path.Home);
+          }
+        }}
+      >
+               <MenuList narrow={shouldNarrow} />
+      </SideBarMenu>
+
       <SideBarBody
         onClick={(e) => {
           if (e.target === e.currentTarget) {

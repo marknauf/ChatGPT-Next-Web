@@ -1,5 +1,7 @@
+@import 'tailwind';
 @import "./animation.scss";
 @import "./window.scss";
+
 
 @mixin light {
   --theme: light;
@@ -9,7 +11,7 @@
   --black: rgb(48, 48, 48);
   --gray: rgb(250, 250, 250);
   --primary: rgb(243, 165, 97);
-  --second: rgb(231, 248, 255);
+  --second: rgb(248, 248, 248);
   --hover-color: #f3f3f3;
   --bar-color: rgba(0, 0, 0, 0.1);
   --theme-color: var(--gray);

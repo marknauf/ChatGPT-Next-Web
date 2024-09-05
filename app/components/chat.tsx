@@ -30,6 +30,7 @@ import EditIcon from "../icons/rename.svg";
 import ConfirmIcon from "../icons/confirm.svg";
 import CancelIcon from "../icons/cancel.svg";
 import ImageIcon from "../icons/image.svg";
+import PluginIcon from "../icons/plugin.svg";
 
 import LightIcon from "../icons/light.svg";
 import DarkIcon from "../icons/dark.svg";
@@ -572,19 +573,19 @@ export function ChatActions(props: {
         }
       />
 
-      {/* <ChatAction
+      <ChatAction
         onClick={props.showPromptHints}
         text={Locale.Chat.InputActions.Prompt}
         icon={<PromptIcon />}
-      /> */}
+      />
 
-      {/* <ChatAction
+      <ChatAction
         onClick={() => {
           navigate(Path.Masks);
         }}
         text={Locale.Chat.InputActions.Masks}
         icon={<MaskIcon />}
-      /> */}
+      />
 
       <ChatAction
         text={Locale.Chat.InputActions.Clear}
@@ -722,7 +723,7 @@ export function ChatActions(props: {
         />
       )}
 
-      {/* <ChatAction
+      <ChatAction
         onClick={() => setShowPluginSelector(true)}
         text={Locale.Plugin.Name}
         icon={<PluginIcon />}
@@ -748,7 +749,7 @@ export function ChatActions(props: {
             }
           }}
         />
-      )} */}
+      )}
     </div>
   );
 }

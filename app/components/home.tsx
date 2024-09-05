@@ -30,6 +30,8 @@ import { getClientConfig } from "../config/client";
 import { type ClientApi, getClientApi } from "../client/api";
 import { useAccessStore } from "../store";
 
+
+
 export function Loading(props: { noLogo?: boolean }) {
   return (
     <div className={styles["loading-content"] + " no-dark"}>
@@ -48,6 +50,22 @@ const Settings = dynamic(async () => (await import("./settings")).Settings, {
 });
 
 const Chat = dynamic(async () => (await import("./chat")).Chat, {
+  loading: () => <Loading noLogo />,
+});
+
+const UploadRFP = dynamic(async () => (await import("./upload")).UploadRFP, {
+  loading: () => <Loading noLogo />,
+});
+
+const EditableSections = dynamic(async () => (await import("./editable-sections")).EditableSections, {
+  loading: () => <Loading noLogo />,
+});
+
+const CorpCapEditor = dynamic(async () => (await import("./corp-cap")).CorpCapEditor, {
+  loading: () => <Loading noLogo />,
+});
+
+const RFPOverview = dynamic(async () => (await import("./rfp-overview")).RFPOverview, {
   loading: () => <Loading noLogo />,
 });
 
@@ -180,6 +198,10 @@ function Screen() {
           <Routes>
             <Route path={Path.Home} element={<Chat />} />
             <Route path={Path.NewChat} element={<NewChat />} />
+            <Route path={Path.Upload} element={<UploadRFP />} />
+            <Route path={Path.EditableSections} element={<EditableSections />} />
+            <Route path={Path.CorpCapEditor} element={<CorpCapEditor />} />
+            <Route path={Path.RFPOverview} element={<RFPOverview />} />
             <Route path={Path.Masks} element={<MaskPage />} />
             <Route path={Path.SearchChat} element={<SearchChat />} />
             <Route path={Path.Chat} element={<Chat />} />

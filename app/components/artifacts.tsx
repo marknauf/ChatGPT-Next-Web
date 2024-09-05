@@ -40,13 +40,7 @@ export const HTMLPreview = forwardRef<HTMLPreviewHander, HTMLPreviewProps>(
     const [frameId, setFrameId] = useState<string>(nanoid());
     const [iframeHeight, setIframeHeight] = useState(600);
     const [title, setTitle] = useState("");
-    /*
-     * https://stackoverflow.com/questions/19739001/what-is-the-difference-between-srcdoc-and-src-datatext-html-in-an
-     * 1. using srcdoc
-     * 2. using src with dataurl:
-     *    easy to share
-     *    length limit (Data URIs cannot be larger than 32,768 characters.)
-     */
+  
 
     useEffect(() => {
       const handleMessage = (e: any) => {
